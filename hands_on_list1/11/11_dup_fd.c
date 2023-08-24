@@ -3,9 +3,9 @@
 #include<unistd.h>
 #include<fcntl.h>
 #include<string.h>
-void appendDescriptorToFile(int fd) {
-    char descriptor_str[10];
-    snprintf(descriptor_str, sizeof(descriptor_str), "%d\n", fd);
+void appendDescriptorToFile(int fd, char *descriptorType) {
+    char descriptor_str[20];
+    snprintf(descriptor_str, sizeof(descriptor_str), "%s %d\n",descriptorType, fd);
 
     if (write(fd, descriptor_str, strlen(descriptor_str)) == -1) {
         perror("Error writing descriptor");
@@ -30,10 +30,10 @@ int main() {
 
     int fcntl_fd = fcntl(original_fd, F_DUPFD, 0);
 
-    appendDescriptorToFile(original_fd);
-    appendDescriptorToFile(dup_fd);
-    appendDescriptorToFile(dup2_fd);
-    appendDescriptorToFile(fcntl_fd);
+    appendDescriptorToFile(original_fd, "Original fd: ");
+    appendDescriptorToFile(dup_fd,"Duplicate fd: ");
+    appendDescriptorToFile(dup2_fd,"Duplicate fd 2:" );
+    appendDescriptorToFile(fcntl_fd, "Fcntl: ");
 
     close(original_fd);
     close(dup_fd);
