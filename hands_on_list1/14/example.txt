@@ -1,0 +1,3 @@
+14_check_filetype.c
+a.out
+example.txt
