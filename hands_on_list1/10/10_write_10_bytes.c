@@ -14,14 +14,14 @@ int main() {
     char data1[] = "0123456789";
     char data2[] = "abcdefghij";
 
-    // Write the first 10 bytes
+   
     if (write(fd, data1, 10) == -1) {
         perror("Error writing data");
         close(fd);
         return 2;
     }
 
-    // Move the file pointer by 10 bytes
+    
     off_t new_offset = lseek(fd, 10, SEEK_CUR);
 
     if (new_offset == -1) {
@@ -30,14 +30,13 @@ int main() {
         return 3;
     }
 
-    // Write the next 10 bytes
+  
     if (write(fd, data2, 10) == -1) {
         perror("Error writing data");
         close(fd);
         return 4;
     }
 
-    // Close the file
     close(fd);
 
     printf("lseek return value: %ld\n", new_offset);
