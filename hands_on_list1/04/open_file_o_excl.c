@@ -13,14 +13,14 @@ int main() {
 	} else {
 		printf("File '%s' opened in read-write mode with file descriptor: %d\n", file_name, file_descriptor);
 	}
-
-	int file_descriptor_excl = open(file_name, O_RDWR | O_EXCL);
+	const char *file_excl = "example1.txt";
+	int file_descriptor_excl = open(file_excl, O_CREAT | O_EXCL);
 
 	if(file_descriptor_excl == -1) {
 		perror("open with )_EXCL");
 		printf("O_EXCL flag failed as expected. \n");
 	} else {
-		printf("O_EXCL flag opened the fikle with file descriptor: %d\n", file_descriptor_excl);
+		printf("O_EXCL flag opened the file with file descriptor: %d\n", file_descriptor_excl);
 		close(file_descriptor_excl);
 	}
 

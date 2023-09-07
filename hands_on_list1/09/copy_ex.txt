@@ -1,2 +1,0 @@
-09_print_file_properties.c
-example.txt

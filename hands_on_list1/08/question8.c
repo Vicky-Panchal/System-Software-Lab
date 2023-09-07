@@ -1,34 +1,35 @@
-#include<stdio.h>
-#include<fcntl.h>
-#include<sys/stat.h>
-#include<sys/types.h>
-#include<unistd.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+#define MAX_LINE_SIZE 1024
 
 int main(int argc, char* argv[]) {
+    if (argc != 2) {
+        printf("Incorrect arguments\n");
+        return 1;
+    }
 
-	if(argc != 2) {
-		printf("Incorrect arguments");
-		return 0;
-	}
-	int fd_read = open(argv[1], O_RDONLY);
+    int fd_read = open(argv[1], O_RDONLY);
+    if (fd_read == -1) {
+        perror("Unable to open the file");
+        return 1;
+    }
 
-	if(fd_read == -1) {
-		printf("Unable to read or open a file");
-	}
+    char buf[MAX_LINE_SIZE];
+    ssize_t bytes_read;
 
-	char buf;
+    while ((bytes_read = read(fd_read, buf, MAX_LINE_SIZE)) > 0) {
+	write(0, buf, bytes_read);
+    }
 
-	while(1) {
-		int read_file = read(fd_read, &buf, 1);
-		if(read_file == 0)
-			break;
+    if (bytes_read == -1) {
+        perror("Error reading the file");
+    }
 
-		printf("%c",buf);
-	}
+    close(fd_read);
 
-	int fd_read_close = close(fd_read);
-
-	return 0;
+    return 0;
 }
 

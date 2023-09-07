@@ -5,9 +5,9 @@ int main() {
     char buffer[1024];
 
     size_t bytesRead;
-    while ((bytesRead = read(STDIN_FILENO, buffer, sizeof(buffer))) > 1) {
+    while ((bytesRead = read(0, buffer, sizeof(buffer))) > 1) {
         
-        write(STDOUT_FILENO, buffer, bytesRead);
+        write(1, buffer, bytesRead);
     }
 
     if (bytesRead == -1) {
