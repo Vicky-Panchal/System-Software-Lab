@@ -1,7 +1,3 @@
-// A C program to demonstrate Orphan Process.
-// Parent process finishes execution while the
-// child process is running. The child process
-// becomes orphan.
 #include<stdio.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -11,7 +7,7 @@ int main()
 	int pid = fork();
 
 	if (pid > 0)
-		printf("in parent process\n");
+		printf("Child process id: %d\n", pid);
 
 	else if (pid == 0)
 	{

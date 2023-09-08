@@ -21,21 +21,12 @@ int main(int argc, char *argv[]) {
     }
 
     if (pid == 0) {
-        execl("./hello", "hello", argv[1], NULL);
+        execl("./hello"," ", argv[1], NULL);
 
         perror("execl");
         exit(1);
     } else {
-        printf("Parent process is waiting for the child...\n");
-
-        int status;
-        wait(&status);
-
-        if (WIFEXITED(status)) {
-            printf("Child process exited with status %d\n", WEXITSTATUS(status));
-        } else {
-            printf("Child process did not exit normally\n");
-        }
+        wait(0);
     }
 
     return 0;

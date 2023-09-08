@@ -25,12 +25,11 @@ int main() {
             break;
         case 3:
             printf("\nUsing execle:\n");
-            char* envp[] = {NULL}; // No environment variables
-            execle("/bin/ls", "ls", "-Rl", NULL, envp);
+            execle("/bin/ls", "ls", "-Rl", NULL, NULL);
             break;
         case 4:
             printf("\nUsing execv:\n");
-            char* argv[] = {"ls", "-Rl", NULL};
+	    char* argv[] = {"ls", "-Rl", NULL};
             execv("/bin/ls", argv);
             break;
         case 5:
