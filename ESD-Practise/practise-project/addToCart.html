@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="./styles/addToCart.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar-container">
+        <div id="icon">
+            <i id="icon-in-div" class="fas fa-store"></i>
+        </div>
+        <div id="hand-bag">
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+        <div id="number-of-products">0</div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading-container">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Hero -->
+    <div id="hero-container">
+        <img src="path/to/hero-image.jpg" alt="Hero Image">
+    </div>
+
+    <!-- Products -->
+    <div id="flex-container">
+        <div id="flex-item">
+            <div id="product-head">
+                <img src="path/to/product-image.jpg" alt="Product Image">
+                <h2>Product Name</h2>
+            </div>
+            <div id="product-info">
+                <h2 id="dolar-span">$20.00</h2>
+                <i id="shopping-cart" class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+        <!-- Add more product items as needed -->
+    </div>
+
+    <!-- Single Product -->
+    <div id="details-heading">
+        <h1>Product Details</h1>
+    </div>
+    <div id="single-product-container">
+        <div class="flex-item">
+            <img src="path/to/single-product-image.jpg" alt="Single Product Image">
+        </div>
+        <div id="details">
+            <h2 id="name">Product Name</h2>
+            <h3 id="price">$20.00</h3>
+            <p id="description">Product description goes here.</p>
+            <label for="quantity-selector" id="quantity-label">Quantity:</label>
+            <select id="quantity-selector">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <!-- Add more quantity options as needed -->
+            </select>
+            <button id="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Zero Product -->
+    <div id="zero-product-container">
+        <p id="zero-product-msg">No products available.</p>
+    </div>
+
+    <!-- Shopping Cart -->
+    <div id="cart-container">
+        <div id="cart-items">
+            <h1>Your Shopping Cart</h1>
+            <div class="cart-item">
+                <img src="path/to/cart-item-image.jpg" alt="Cart Item Image">
+                <div class="item-info">
+                    <h2>Product Name</h2>
+                    <h3>$20.00</h3>
+                    <p class="remove-btn">Remove</p>
+                </div>
+                <div class="item-quantity">
+                    <label for="quantity-selector" class="quantity-label">Quantity:</label>
+                    <select id="quantity-selector" class="quantity-selector">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <!-- Add more quantity options as needed -->
+                    </select>
+                </div>
+                <div class="item-price">
+                    <h3>$20.00</h3>
+                </div>
+                <div class="item-total-price">
+                    <h3>$40.00</h3>
+                    <p class="remove-btn">Remove</p>
+                </div>
+            </div>
+            <!-- Add more cart items as needed -->
+        </div>
+        <div id="cart-summary">
+            <div class="summary-item">
+                <h2>Subtotal:</h2>
+                <h2 class="total-price">$100.00</h2>
+            </div>
+            <div class="summary-item">
+                <h2>Shipping:</h2>
+                <h2 class="total-price">$10.00</h2>
+            </div>
+            <div class="summary-item">
+                <h2>Total:</h2>
+                <h2 class="total-price">$110.00</h2>
+            </div>
+            <button id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
