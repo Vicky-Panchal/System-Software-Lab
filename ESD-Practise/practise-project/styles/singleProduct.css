@@ -130,6 +130,14 @@ a {
     text-decoration: none; /* Optional: remove underlines */
 }
 
+#navbar-container>#profile {
+    position: absolute;
+    top: 1.2rem;
+    right: 6.6rem;
+    color: white;
+    font-size: 2rem;
+}
+
 @media (max-width: 992px) {
     #single-product-container {
         width: 96%;

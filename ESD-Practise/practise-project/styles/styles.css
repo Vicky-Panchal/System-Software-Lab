@@ -27,6 +27,14 @@
     font-size: 2rem;
 }
 
+#navbar-container>#profile {
+    position: absolute;
+    top: 1.2rem;
+    right: 6.6rem;
+    color: white;
+    font-size: 2rem;
+}
+
 #navbar-container>#hand-bag:hover {
     cursor: pointer;
     color: #9d174d;
