@@ -444,6 +444,11 @@ button:hover {
     color: #9d174d;
 }
 
+a {
+    color: inherit;
+    text-decoration: none; /* Optional: remove underlines */
+}
+
 @media (max-width: 1270px) {
     #single-cart-container {
         width: 70%;

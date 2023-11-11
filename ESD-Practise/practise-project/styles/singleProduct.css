@@ -125,6 +125,11 @@ button:hover {
     cursor: pointer;
 }
 
+a {
+    color: inherit;
+    text-decoration: none; /* Optional: remove underlines */
+}
+
 @media (max-width: 992px) {
     #single-product-container {
         width: 96%;
