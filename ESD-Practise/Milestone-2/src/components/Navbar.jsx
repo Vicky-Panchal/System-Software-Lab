@@ -1,5 +1,6 @@
 import React from "react";
 import { BsHandbag } from 'react-icons/bs';
+import { RiAccountCircleLine } from 'react-icons/ri'; // Import the account icon you prefer
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { TbBuildingStore } from 'react-icons/tb';
@@ -39,9 +40,9 @@ function Navbar() {
             <div id="icon">
                 <TbBuildingStore id="icon-in-div" onClick={handleClickIcon} />
             </div>
+            <RiAccountCircleLine id="account-icon" onClick={handleAccountClick} />
             <BsHandbag id="hand-bag" onClick={handleClickHandBag} />
             <div id="number-of-products">{numberOfProducts()}</div>
-            <button id="account-button" onClick={handleAccountClick}>Account</button>
         </div>
     );
 }

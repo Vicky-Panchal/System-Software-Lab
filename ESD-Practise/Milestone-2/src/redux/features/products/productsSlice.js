@@ -12,7 +12,9 @@ export const getProducts = createAsyncThunk("getProducts", async () => {
     // console.log(response);
     // console.log(response.data);
     // console.log(response.data.products); // Returns a 20-element array where each element is an object.
-    return response.data.products;
+    return response.data.products.filter((item) => {
+        return item.category == "groceries" || item.category == "home-decoration";
+    });
 })
 
 export const productsSlice = createSlice({
