@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Toaster } from 'react-hot-toast';
 
 import "../src/styles/App.css";
+import Account from "./components/Account";
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/" element={loading ? <Loading /> : <Products />} />
         <Route path="/details/:id" element={<Details />} /> {/* "id" dinamik olarak değişeceği için ":" kullandık.  */}
         <Route path="/shoppingCart" element={<ShoppingCart />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
 
     </Router>

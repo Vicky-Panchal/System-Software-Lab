@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-
-function AccountPage() {
+import '../styles/Account.css'
+function Account() {
   // Mock user data (you might fetch this from an API)
   const [user, setUser] = useState({
-    name: "John Doe",
-    email: "johndoe@example.com",
-    address: "123 Main St, City, Country",
+    name: "Vicky Panchal",
+    email: "vicky@gmail.com",
+    address: "IIIT Bangalore",
   });
 
   const [editMode, setEditMode] = useState(false);
@@ -79,4 +79,4 @@ function AccountPage() {
   );
 }
 
-export default AccountPage;
+export default Account;
